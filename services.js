@@ -12,7 +12,6 @@ let imagenes = [];
 
 // Array personas que se llenará dinámicamente
 let personas = [];
-
 // Mostrar información e imagen según el índice
 function mostrarPersona(index) {
     const persona = personas[index];
