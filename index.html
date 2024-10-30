@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nica</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="services.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="branding">
+            <span class="logo">Logo</span>
+            <span class="site-name">Nica</span>
+        </div>
+        <nav class="navigation">
+            <button class="nav-button">Nuestras máscaras</button>
+        </nav>
+    </header>
+    <main class="main-content">
+        <!-- Sección de la información -->
+        <section class="section-description" id="info">
+            <h1 id="title"></h1>
+            <p id="description"></p>
+            <button class="carousel-button left" onclick="showPrevious()">❮</button>
+        </section>
+    
+        <!-- Sección de la imagen con botones a los lados -->
+        <section class="section-image">
+            <img id="image" src="" alt="Imagen de persona">
+            <button class="carousel-button right" onclick="showNext()">❯</button>
+        </section>
+    </main>    
+
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-section address-section">
+                <h5>Dirección</h5>
+                <ul>
+                    <li>Dirección: </li>
+                    <li>Teléfono: </li>
+                </ul>
+            </div>
+            <div class="footer-section info-section">
+            </div>
+            <div class="footer-section social-section">
+                <h5>Redes Sociales</h5>
+                <ul>
+                    <li><a href="https://www.instagram.com/nica.bog"><img src="img/iconoInstagram.png" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="img/iconoWhatsapp.png" alt="WhatsApp"></a></li>
+                </ul>
+            </div>
+        </div> 
+        <div class="footer-credentials">
+            <div class="copy-credentials">
+                <p>&copy; 2024 Nica. Todos los derechos reservados.</p>
+            </div>
+            <div class="legal-credentials">
+                <ul>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>   
+</body>
+</html>

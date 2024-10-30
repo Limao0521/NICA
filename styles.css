@@ -1,0 +1,317 @@
+:root {
+    --primary-color: #264653; /* Verde bosque */
+    --secondary-color: #A8DADC; /* Verde menta */
+    --accent-color: #F4A261; /* Mostaza */
+    --background-color: #FAF3DD; /* Beige suave */
+    --text-color: #264653; /* Mismo verde oscuro para textos */
+    --font-family: 'Poppins', sans-serif; /* Fuente moderna y amigable */
+    --header-height: 80px;
+    --footer-background: #264653; /* Verde bosque */
+    --footer-text-color: #FFFFFF; /* Blanco */
+}
+
+
+
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asegurar que html y body ocupan el 100% del ancho y alto */
+html, body {
+    height: 100%;
+    width: 100%; /* Ocupa todo el ancho */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura */
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 2rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navigation .nav-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.navigation .nav-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Main content ocupa todo el ancho */
+.main-content {
+    flex: 1; /* Ocupa el espacio disponible en altura */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    padding: 2rem; /* Espacio interno opcional */
+    background-color: var(--background-color); /* Color de fondo del main-content */
+    display: flex;
+    gap: 2rem; /* Espacio entre las secciones internas */
+    align-items: stretch; /* Ambas secciones tendrán la misma altura */
+}
+
+/* Sección de descripción */
+.section-description {
+    flex: 1; /* Ocupa el 50% del espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+}
+
+/* Ajuste del contenido dentro de la sección de descripción */
+.section-description h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-description {
+    flex: 1;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+/* Sección de Imagen */
+.section-image {
+    flex: 1; /* Ocupa el 50% del espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Posiciona los botones dentro del contenedor */
+    overflow: hidden; /* Evita que la imagen se salga del contenedor */
+    background-color: var(--secondary-color); /* Fondo de apoyo */
+    border-radius: 8px; /* Opcional */
+}
+
+/* Imagen dentro del Contenedor */
+.section-image img {
+    width: 100%; /* Llenar el contenedor en ancho */
+    height: 100%; /* Llenar el contenedor en alto */
+    object-fit: cover; /* Ajustar sin deformar */
+    object-position: center; /* Centrar la imagen dentro del contenedor */
+    max-width: none; /* Permite que la imagen supere los límites si es necesario */
+    max-height: none; /* Desactiva el límite de altura para imágenes grandes */
+}
+
+/* Botones del Carrusel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--accent-color);
+    color: var(--footer-text-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 50%;
+    z-index: 1; /* Asegura que los botones queden sobre la imagen */
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer General */
+.footer {
+    background-color: var(--footer-background); /* Verde oscuro */
+    color: var(--footer-text-color); /* Blanco */
+    padding: 20px;
+    width: 100%;
+}
+
+/* Wrapper del Footer */
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Espacio entre secciones */
+}
+
+/* Secciones del Footer */
+.footer-section {
+    flex: 1 1 300px; /* Sección flexible con tamaño mínimo */
+    margin-bottom: 20px;
+}
+
+/* Estilos para las listas dentro del footer */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    color: var(--footer-text-color); /* Asegura la legibilidad */
+}
+
+.footer-section a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Redes Sociales */
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Credenciales del Footer */
+.footer-credentials {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Copy y Legal en Footer */
+.copy-credentials {
+    flex: 1;
+    text-align: left;
+}
+
+.legal-credentials ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.legal-credentials a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+}
+
+.legal-credentials a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .navigation {
+        margin-top: 1rem;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-section {
+        margin: 1rem 0;
+    }
+
+    .footer-credentials {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .legal-credentials ul {
+        flex-direction: column;
+    }
+
+    .legal-credentials ul li {
+        margin: 0 0 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 0.75rem;
+    }
+}
