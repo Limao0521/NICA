@@ -20,6 +20,10 @@ function mostrarPersona(index) {
     document.getElementById('image').src = persona.imagen;
 }
 
+function irJuego() {
+    window.location.href = 'https://interacty.me/projects/d7bafe60949e30c7';
+}
+
 // Mostrar la persona anterior
 function showPrevious() {
     currentIndex = (currentIndex - 1 + personas.length) % personas.length;
