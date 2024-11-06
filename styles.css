@@ -9,7 +9,7 @@
     /* Beige suave */
     --text-color: #264653;
     /* Mismo verde oscuro para textos */
-    --font-family:  'Happy Monkey';
+    --font-family: 'Happy Monkey';
     /* Fuente moderna y amigable */
     --header-height: 80px;
     --footer-background: #264653;
@@ -56,6 +56,7 @@ body {
     padding: 1rem 2rem;
     background-color: var(--secondary-color);
     color: white;
+    position: relative; /* Para controlar la posición de elementos en móviles */
 }
 
 .site-name {
@@ -63,6 +64,7 @@ body {
     font-weight: bold;
 }
 
+/* Botón "Juega con nosotros" */
 .navigation .nav-button {
     background-color: var(--accent-color);
     color: white;
@@ -70,6 +72,8 @@ body {
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
+    display: inline-block;
+    z-index: 10; /* Para asegurar que el botón esté en frente de otros elementos */
 }
 
 .navigation .nav-button:hover {
@@ -222,15 +226,59 @@ body {
     list-style: none;
 }
 
+/* Menú flotante para los juegos */
+.game-menu {
+    display: none;
+    position: absolute;
+    top: calc(var(--header-height) + 10px);
+    right: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 1000;
+    width: 200px;
+    transition: opacity 0.3s ease;
+}
+
+.game-menu.show {
+    display: block;
+}
+
+.game-menu a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.game-menu a:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 4px;
+}
+
 /* Responsivo para dispositivos pequeños */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row; /* Mantiene el logo y el botón en la misma línea */
+        justify-content: space-between;
+        padding: 1rem;
     }
 
-    .navigation {
-        margin-top: 1rem;
+    .site-name {
+        font-size: 1.5rem;
+    }
+
+    .navigation .nav-button {
+        width: auto;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        position: relative;
+        top: 0; /* Mantiene alineado con el nombre del sitio */
+        display: inline-block;
     }
 
     .main-content {
@@ -246,10 +294,30 @@ body {
         align-items: center;
         gap: 10px;
     }
+
+    .game-menu {
+        right: 50%;
+        transform: translateX(50%);
+        width: 90%;
+    }
 }
 
 /* Ajustes para pantallas muy pequeñas */
 @media (max-width: 480px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .site-name {
+        font-size: 1.2rem;
+    }
+
+    .navigation .nav-button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
     .section-description h1 {
         font-size: 1.8rem;
     }
@@ -265,5 +333,10 @@ body {
 
     .cta-button {
         width: 100%;
+    }
+
+    .game-menu {
+        width: 100%;
+        right: 5px;
     }
 }

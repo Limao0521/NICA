@@ -20,8 +20,9 @@ function mostrarPersona(index) {
     document.getElementById('image').src = persona.imagen;
 }
 
-function irJuego() {
-    window.location.href = 'https://interacty.me/projects/d7bafe60949e30c7';
+function toggleGameMenu() {
+    const menu = document.getElementById('gameMenu');
+    menu.classList.toggle('show');
 }
 
 // Mostrar la persona anterior
