@@ -56,7 +56,7 @@ body {
     padding: 1rem 2rem;
     background-color: var(--secondary-color);
     color: white;
-    position: relative; /* Para controlar la posición de elementos en móviles */
+    position: relative;
 }
 
 .site-name {
@@ -73,7 +73,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     display: inline-block;
-    z-index: 10; /* Para asegurar que el botón esté en frente de otros elementos */
+    z-index: 10;
 }
 
 .navigation .nav-button:hover {
@@ -263,7 +263,7 @@ body {
 /* Responsivo para dispositivos pequeños */
 @media (max-width: 768px) {
     .header {
-        flex-direction: row; /* Mantiene el logo y el botón en la misma línea */
+        flex-direction: row;
         justify-content: space-between;
         padding: 1rem;
     }
@@ -277,7 +277,7 @@ body {
         padding: 0.5rem 1rem;
         font-size: 1rem;
         position: relative;
-        top: 0; /* Mantiene alineado con el nombre del sitio */
+        top: 0;
         display: inline-block;
     }
 
@@ -295,10 +295,14 @@ body {
         gap: 10px;
     }
 
+    /* Posiciona el menú debajo del botón en móviles y agrega margen */
     .game-menu {
-        right: 50%;
-        transform: translateX(50%);
-        width: 90%;
+        position: absolute;
+        top: 100%; /* Alinea el menú justo debajo del botón */
+        right: 0;
+        margin-top: 5px; /* Espacio entre el botón y el menú */
+        width: 90%; /* Aumenta el ancho en móviles */
+        transform: translateX(-5%);
     }
 }
 
@@ -336,7 +340,8 @@ body {
     }
 
     .game-menu {
-        width: 100%;
-        right: 5px;
+        width: 100%; /* Asegura que ocupe todo el ancho en pantallas muy pequeñas */
+        right: 0;
+        transform: translateX(0);
     }
 }
